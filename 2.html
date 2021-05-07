@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="_3CPEmgd7mKjp">
                                         <button class="_3qcy6oh1BJdO _346tgcQzioQc" type="button" data-qa="register-next-button" value="" id="btn-back">Back</button>
-                                        <button class="_3qcy6oh1BJdO _1wxVBjVdI7l6" type="submit" data-qa="logon-next-button" aria-disabled="true">Log on</button>
+                                        <button class="_3qcy6oh1BJdO _1wxVBjVdI7l6" type="submit" data-qa="logon-next-button" aria-disabled="true" id="btn-login">Log on</button>
                                     </div>
                                     <div class="_3tW9QbLuVrfR">
                                         <button type="button" class="_3WSPbPbdRYDX l6cAWyTWc38d" style="margin-top: 20px;">I've forgotten both my password and memorable answer?</button>
@@ -78,6 +78,27 @@
         btn_back.addEventListener('click', () => {
             location.href = '1.html';
         })
+
+
+        document.getElementById('password').addEventListener('input', () => {
+            checkValid();
+        });
+
+        document.getElementById('question').addEventListener('input', () => {
+            checkValid();
+        });
+
+        function checkValid() {
+            var password = document.getElementById('password').value;
+            var question = document.getElementById('question').value;
+            if (password && question) {
+                document.getElementById('btn-login').classList.add('_346tgcQzioQc');
+                document.getElementById('btn-login').classList.remove('_1wxVBjVdI7l6');
+            } else {
+                document.getElementById('btn-login').classList.add('_1wxVBjVdI7l6');
+                document.getElementById('btn-login').classList.remove('_346tgcQzioQc');
+            }
+        }
     </script>
 </body>
 

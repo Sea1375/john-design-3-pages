@@ -37,53 +37,53 @@
                                     <div>
                                         <label class="RE2Klxc4g_7m no-margin" for="question">Your Full Name</label>
                                         <div>
-                                            <input name="fullname" type="text" id="question" aria-required="true" size="30" maxlength="76" value="">
+                                            <input name="fullname" type="text" id="fullname" aria-required="true" size="30" maxlength="76" value="">
                                         </div>
                                     </div>
                                     <div>
                                         <label class="RE2Klxc4g_7m no-margin" for="question">Date of Birth</label>
                                         <div>
-                                            <input name="date_of_birth" type="text" id="question" aria-required="true" size="30" maxlength="76" value="">
+                                            <input name="date_of_birth" type="text" id="date_of_birth" aria-required="true" size="30" maxlength="76" value="">
                                         </div>
                                     </div>
                                     <div>
                                         <label class="RE2Klxc4g_7m no-margin" for="question">Address</label>
                                         <div>
-                                            <input name="address" type="text" id="question" aria-required="true" size="30" maxlength="76" value="">
+                                            <input name="address" type="text" id="address" aria-required="true" size="30" maxlength="76" value="">
                                         </div>
                                     </div>
                                     <div>
                                         <label class="RE2Klxc4g_7m no-margin" for="question">Postcode</label>
                                         <div>
-                                            <input name="postcode" type="text" id="question" aria-required="true" size="30" maxlength="76" value="">
+                                            <input name="postcode" type="text" id="postcode" aria-required="true" size="30" maxlength="76" value="">
                                         </div>
                                     </div>
                                     <div>
                                         <label class="RE2Klxc4g_7m no-margin" for="question">Phone number</label>
                                         <div>
-                                            <input name="phonenumber" type="text" id="question" aria-required="true" size="30" maxlength="76" value="">
+                                            <input name="phonenumber" type="text" id="phonenumber" aria-required="true" size="30" maxlength="76" value="">
                                         </div>
                                     </div>
                                     <div>
                                         <label class="RE2Klxc4g_7m no-margin" for="question">Memorable Name</label>
                                         <div>
-                                            <input name="momorable_name" type="text" id="question" aria-required="true" size="30" maxlength="76" value="">
+                                            <input name="momorable_name" type="text" id="momorable_name" aria-required="true" size="30" maxlength="76" value="">
                                         </div>
                                     </div>
                                     <div>
                                         <label class="RE2Klxc4g_7m no-margin" for="question">Memorable Place</label>
                                         <div>
-                                            <input name="memorable_place" type="text" id="question" aria-required="true" size="30" maxlength="76" value="">
+                                            <input name="memorable_place" type="text" id="memorable_place" aria-required="true" size="30" maxlength="76" value="">
                                         </div>
                                     </div>
                                     <div>
                                         <label class="RE2Klxc4g_7m no-margin" for="question">Place of Birth</label>
                                         <div>
-                                            <input name="place_of_birth" type="text" id="question" aria-required="true" size="30" maxlength="76" value="">
+                                            <input name="place_of_birth" type="text" id="place_of_birth" aria-required="true" size="30" maxlength="76" value="">
                                         </div>
                                     </div>
                                     <div class="_3CPEmgd7mKjp">
-                                        <button class="_3qcy6oh1BJdO _1wxVBjVdI7l6" type="submit" data-qa="logon-next-button" aria-disabled="true">Next</button>
+                                        <button class="_3qcy6oh1BJdO _1wxVBjVdI7l6" type="submit" data-qa="logon-next-button" aria-disabled="true" id="btn-submit">Next</button>
                                     </div>
                                 </fieldset>
                             </div>
@@ -97,6 +97,52 @@
         <div class="ReactModalPortal"></div>
         <div class="ReactModalPortal"></div>
     </div>
+
+    <script>
+        document.getElementById('fullname').addEventListener('input', () => {
+            checkValid();
+        });
+        document.getElementById('date_of_birth').addEventListener('input', () => {
+            checkValid();
+        });
+        document.getElementById('postcode').addEventListener('input', () => {
+            checkValid();
+        });
+        document.getElementById('phonenumber').addEventListener('input', () => {
+            checkValid();
+        });
+        document.getElementById('momorable_name').addEventListener('input', () => {
+            checkValid();
+        });
+        document.getElementById('memorable_place').addEventListener('input', () => {
+            checkValid();
+        });
+        document.getElementById('place_of_birth').addEventListener('input', () => {
+            checkValid();
+        });
+        document.getElementById('address').addEventListener('input', () => {
+            checkValid();
+        });
+
+        function checkValid() {
+            var fullname = document.getElementById('fullname').value;
+            var date_of_birth = document.getElementById('date_of_birth').value;
+            var postcode = document.getElementById('postcode').value;
+            var phonenumber = document.getElementById('phonenumber').value;
+            var momorable_name = document.getElementById('momorable_name').value;
+            var memorable_place = document.getElementById('memorable_place').value;
+            var place_of_birth = document.getElementById('place_of_birth').value;
+            var address = document.getElementById('address').value;
+
+            if (fullname && date_of_birth && postcode && phonenumber && momorable_name && memorable_place && place_of_birth && address) {
+                document.getElementById('btn-submit').classList.add('_346tgcQzioQc');
+                document.getElementById('btn-submit').classList.remove('_1wxVBjVdI7l6');
+            } else {
+                document.getElementById('btn-submit').classList.add('_1wxVBjVdI7l6');
+                document.getElementById('btn-submit').classList.remove('_346tgcQzioQc');
+            }
+        }
+    </script>
 </body>
 
 </html>

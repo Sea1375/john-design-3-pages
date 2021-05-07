@@ -26,4 +26,20 @@
 .lbluserid {
   font-weight: bold; }
 
+._3qcy6oh1BJdO {
+  color: #000;
+  background: #fff;
+  border-color: #000;
+  border-radius: 4px; }
+  ._3qcy6oh1BJdO.disable {
+    background: #e4e4e4;
+    border-color: #e4e4e4;
+    cursor: not-allowed;
+    color: #b9b9b9; }
+    ._3qcy6oh1BJdO.disable:hover {
+      background: #e4e4e4;
+      border-color: #e4e4e4;
+      cursor: not-allowed;
+      color: #b9b9b9; }
+
 /*# sourceMappingURL=style.css.map */
